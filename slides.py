@@ -14,12 +14,12 @@ slides = [
     animation_a.AnimationA(),
 ]
 
-title_long = "Creating Animated Slides With"
-title_short = "Creating Slides With Manim"
-authors_long = "Alex Ivliev"
-authors_short = "Alex Ivliev"
-affiliation = "Knowledge-Based Systems, TU Dresden"
-date = "Retreat 2024, 21st of August"
+title_long = "Your Long Title"
+title_short = "Short title"
+authors_long = "List of authors"
+authors_short = "Presenting Author"
+affiliation = "Your affiliation"
+date = "Current date"
 
 class Slides(Slide):
     def draw_background(render, current, max):
