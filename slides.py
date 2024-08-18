@@ -3,15 +3,13 @@ from manim_slides import Slide
 
 from util import text, coordinates
 
-from scenes import title, what, community, animation_a
+from scenes import title, example
 
-create_title = False
+create_title = True
 
 # Put your slides here
 slides = [
-    # what.What(),
-    # community.Community(),
-    animation_a.AnimationA(),
+    example.Example()
 ]
 
 title_long = "Your Long Title"
