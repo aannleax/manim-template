@@ -1,28 +1,25 @@
 from manim import *
 from manim_slides import Slide
 
-from util import text
+from util import text, coordinates
 
-from scenes import title, example
+from scenes import title, what, community, animation_a
 
-create_title = True
+create_title = False
 
 # Put your slides here
 slides = [
-    example.Example(),
+    # what.What(),
+    # community.Community(),
+    animation_a.AnimationA(),
 ]
 
-title_long = "Your Long Title"
-title_short = "Short title"
-authors_long = "List of authors"
-authors_short = "Presenting Author"
-affiliation = "Your affiliation"
-date = "Current date"
-
-UPPER_LEFT = 6.25 * LEFT + 3.25 * UP
-LOWER_LEFT = 6.25 * LEFT + 3.25 * DOWN
-UPPER_RIGHT = 6.25 * RIGHT + 3.25 * UP
-LOWER_RIGHT = 6.25 * RIGHT + 3.25 * DOWN
+title_long = "Creating Animated Slides With"
+title_short = "Creating Slides With Manim"
+authors_long = "Alex Ivliev"
+authors_short = "Alex Ivliev"
+affiliation = "Knowledge-Based Systems, TU Dresden"
+date = "Retreat 2024, 21st of August"
 
 class Slides(Slide):
     def draw_background(render, current, max):
@@ -31,12 +28,12 @@ class Slides(Slide):
         background.scale_to_fit_width(render.camera.frame_width)
         render.add(background)
 
-        coordinate_title = 4 * LEFT + 3.4 * DOWN
+        coordinate_title = 4 * LEFT + 3.45 * DOWN
         coordinate_slide = 1.5 * RIGHT + 3.6 * DOWN
         coordinate_number = coordinate_slide + 1.0 * RIGHT
 
         title = text.tex(title_short, color = GRAY, font_size= 18).next_to(coordinate_title, RIGHT)
-        author = text.tex(authors_short, color = GRAY, font_size= 18).next_to(coordinate_title, RIGHT).shift(0.3 * DOWN)
+        author = text.tex(authors_short, color = GRAY, font_size= 18).next_to(coordinate_title, RIGHT).shift(0.25 * DOWN)
         render.add(title)
         render.add(author)
 
@@ -49,7 +46,7 @@ class Slides(Slide):
         render.add(slides_text)
 
     def draw_slide_title(render, title):
-        text_title = text.tex(f'\\textbf{{{title}}}', color = GRAY, font_size=42).next_to(UPPER_LEFT, RIGHT, aligned_edge=DOWN)
+        text_title = text.tex(f'\\textbf{{{title}}}', color = GRAY, font_size=42).next_to(coordinates.UPPER_LEFT + 0.25 * UP, RIGHT, aligned_edge=DOWN)
         render.add(text_title)
 
     def construct(self):
