@@ -12,4 +12,4 @@ This is a template for presentations in [Manim](https://www.manim.community/) ro
 
 ## Useful Links
 
-Reference with animations: https://docs.manim.community/en/stable/reference/
+Reference with animations: https://docs.manim.community/en/stable/reference_index/animations.html
