@@ -13,3 +13,24 @@ This is a template for presentations in [Manim](https://www.manim.community/) ro
 ## Useful Links
 
 Reference with animations: https://docs.manim.community/en/stable/reference_index/animations.html
+Try Manim online: https://try.manim.community/
+
+## Commands
+
+Compiling and showing slides
+```
+manim slides.py Slides
+manim-slides Slides
+```
+
+Setup command
+```
+manim-slides wizard
+```
+
+Convert to other formats:
+```
+manim-slides convert Slides --to=pdf
+manim-slides convert Slides --to=html
+```
+
