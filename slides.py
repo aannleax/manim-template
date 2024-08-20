@@ -3,13 +3,19 @@ from manim_slides import Slide
 
 from util import text, coordinates
 
-from scenes import title, example
+from scenes import title, example, position, basic, tracing, animate, rotate, transform, latex
 
 create_title = True
 
 # Put your slides here
 slides = [
-    example.Example()
+    # position.Position(),
+    # basic.Basic(),
+    # animate.Animate(),
+    # rotate.Rotation(),
+    # tracing.Tracing(),
+    # transform.TransformObjects(),
+    latex.Equations()
 ]
 
 title_long = "Your Long Title"
@@ -44,7 +50,7 @@ class Slides(Slide):
         render.add(slides_text)
 
     def draw_slide_title(render, title):
-        text_title = text.tex(f'\\textbf{{{title}}}', color = GRAY, font_size=42).next_to(coordinates.UPPER_LEFT + 0.25 * UP, RIGHT, aligned_edge=DOWN)
+        text_title = text.tex(f'\\textbf{{{title}}}', color = GRAY, font_size=42).next_to(coordinates.UPPER_LEFT + 0.5 * UP, RIGHT, aligned_edge=DOWN)
         render.add(text_title)
 
     def construct(self):
@@ -61,7 +67,9 @@ class Slides(Slide):
 
             self.clear()
             self.draw_background(index + 1, len(slides))
-            self.draw_slide_title(slide.title)
+
+            if slide.title is not None:
+                self.draw_slide_title(slide.title)
           
             slide.construct(self)
 

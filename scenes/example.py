@@ -10,10 +10,7 @@ class Example(Slide):
 
 
     def construct(self, render):
-        my_text = text.tex("Test").next_to(coordinates.UPPER_LEFT)
-        render.add(my_text)
-
         circle = Circle(radius=2, color=BLUE)
         render.add(circle)
-
+    
         render.wait()
